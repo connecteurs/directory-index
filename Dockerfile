@@ -1,4 +1,4 @@
-FROM alpine:3.11
+FROM registry.gitlab.com/les-connecteurs/docker/alpine
 
 WORKDIR /app
 VOLUME /app
