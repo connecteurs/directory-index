@@ -15,7 +15,7 @@ list_directories() {
   find "$1" -type d -maxdepth 1 -not -path '*/\.*' -not -path "$1" | sort | \
   while IFS='' read -r directory_path; do
     directory_name=$(basename "$directory_path")
-    echo "    <li><a href=\"$directory_name/\">$directory_name/</a></li>"
+    echo "    <li><a href=\"$directory_name/\"><strong>$directory_name/</strong></a></li>"
   done
 }
 
@@ -115,7 +115,7 @@ generate_index() {
     (
       generate_header "$directory_name"
       if [ "$1" != "$start_dir" ]; then
-        echo "    <li><a href=\"../\">❮ Parent directory</a></li>"
+        echo "    <li><a href=\"../\"><strong>❮ Parent directory</strong></a></li>"
       fi
       list_directories "$1"
       list_files "$1"
