@@ -1,4 +1,4 @@
-FROM ghcr.io/connecteurs/alpine
+FROM ghcr.io/connecteurs/alpine:v3.19.1
 
 WORKDIR /app
 VOLUME /app
